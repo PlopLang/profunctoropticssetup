@@ -1,0 +1,58 @@
+cabal-version: 3.6
+
+name:           testProfunctors
+version:        0.1.0.0
+build-type:     Simple
+extra-source-files:
+    README.md
+
+executable testProfunctors-exe
+  ghc-options: -threaded -O3 -Wno-deprecations -fdefer-typed-holes -Wno-typed-holes -fdefer-typed-holes -Wno-typed-holes
+    -Wunused-imports 
+    -Wincomplete-patterns
+    -Wincomplete-record-updates
+    -Wtabs
+    -Wunused-binds
+    -Wunused-matches
+    -Wunused-do-bind
+    -Wwrong-do-bind
+    -Wname-shadowing:
+  mixins: 
+      base (Prelude as BasePrelude)
+    , base hiding (Prelude)
+  main-is: Main.hs
+  other-modules:
+      Paths_testProfunctors
+  hs-source-dirs:
+      ./
+  default-extensions:
+      StrictData
+      LambdaCase
+      EmptyCase
+      ViewPatterns
+      StandaloneDeriving
+      MultiWayIf
+      PartialTypeSignatures
+      ScopedTypeVariables
+      RankNTypes
+      FlexibleContexts
+      TupleSections
+      ConstraintKinds
+      RecursiveDo
+      OverloadedStrings
+      DeriveDataTypeable
+      DeriveGeneric
+      OverloadedRecordDot
+      UnicodeSyntax
+      DeriveFunctor
+      DeriveTraversable
+      DeriveFoldable
+      DerivingVia
+      TypeApplications
+      StandaloneKindSignatures
+      TypeOperators
+--    TypeFamilies
+  build-depends:
+      base
+    , profunctor-optics
+  default-language: Haskell2010
